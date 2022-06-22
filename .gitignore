@@ -5,6 +5,7 @@
 *.tfstate
 *.tfvars
 *.tfstate.*
+.terraform.lock.hcl
 
 # Crash log files
 crash.log
@@ -18,6 +19,7 @@ crash.log
 # Ignore override files as they are usually used to override resources locally and so
 # are not checked in
 override.tf
+*.pub
 override.tf.json
 *_override.tf
 *_override.tf.json
