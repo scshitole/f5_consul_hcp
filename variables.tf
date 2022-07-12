@@ -1,16 +1,16 @@
 variable "vpc_id" {
   type        = string
-  description = "AWS VPC ID"
+  description = "AWS VPC ID where your instances are running"
 }
 
 variable "vpc_cidr_block" {
   type        = string
-  description = "AWS CIDR block"
+  description = "AWS CIDR block of the above VPC"
 }
 
 variable "subnet_id" {
   type        = string
-  description = "AWS subnet (public)"
+  description = "AWS subnet (public) in that VPC"
 }
 
 variable "cluster_id" {

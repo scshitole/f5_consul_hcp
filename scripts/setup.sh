@@ -61,7 +61,7 @@ cat << EOF > /etc/consul.d/nginx.json
     "port": 80,
     "checks": [
       {
-        "id": "nginx",
+        "id": "web",
         "name": "nginx TCP Check",
         "tcp": "localhost:80",
         "interval": "10s",
