@@ -33,3 +33,8 @@ type        = string
   description = "Service principle key for HCP Consul HCP"
 }
 
+variable "f5ami" {
+ description = "f5 ami in west 2"
+  default     = "ami-09ae9af26d2e96786"
+
+}

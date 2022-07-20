@@ -22,3 +22,10 @@ output "next_steps" {
   value = "Hashicups Application will be ready in ~2 minutes. Use 'terraform output consul_root_token' to retrieve the root token."
 }
 
+output "f5_ui" {
+  value = "https://${aws_instance.f5.public_ip}:8443"
+}
+output "F5_Password" {
+  value = random_string.password.result
+}
+
