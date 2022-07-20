@@ -64,6 +64,12 @@ resource "aws_security_group" "allow_ssh" {
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
   }
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.0.0/16"]
+  }
 
   tags = {
     Name = "allow_ssh"
@@ -72,7 +78,7 @@ resource "aws_security_group" "allow_ssh" {
 
 // Consul client instance
 resource "aws_instance" "consul_client" {
-  count                       = 4
+  count                       = 2
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = "t2.small"
   associate_public_ip_address = true
@@ -134,4 +140,4 @@ resource "aws_security_group" "f5" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-   
+

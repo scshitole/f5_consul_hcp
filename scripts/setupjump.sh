@@ -57,7 +57,7 @@ setup_consul
 cat << EOF > /etc/consul.d/nginx.json
 {
   "service": {
-    "name": "nginx",
+    "name": "jump",
     "port": 80,
     "checks": [
       {

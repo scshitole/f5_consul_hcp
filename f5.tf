@@ -12,13 +12,13 @@ resource "aws_instance" "f5" {
   private_ip                  = "10.0.0.200"
   associate_public_ip_address = true
   subnet_id                   = var.subnet_id
-  vpc_security_group_ids      = [
+  vpc_security_group_ids = [
     var.hcp_consul_security_group_id,
     aws_security_group.f5.id
   ]
 
-  user_data                   = data.template_file.f5_init.rendered
-  key_name                    = aws_key_pair.consul_client.key_name
+  user_data = data.template_file.f5_init.rendered
+  key_name  = aws_key_pair.consul_client.key_name
   root_block_device {
     delete_on_termination = true
   }
