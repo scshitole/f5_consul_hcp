@@ -72,7 +72,7 @@ resource "aws_security_group" "allow_ssh" {
 
 // Consul client instance
 resource "aws_instance" "consul_client" {
-  count                       = 2
+  count                       = 4
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = "t2.small"
   associate_public_ip_address = true
