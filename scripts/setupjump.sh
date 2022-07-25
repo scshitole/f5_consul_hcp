@@ -101,10 +101,19 @@ buffer_period {
 }
 
 # Consul Block
-consul {
-  address = "https://s-consul-cluster.consul.xxxd39eb209e.aws.hashicorp.cloud"
-  token = "xxxxxxxx"
+ consul {
+  address = "localhost:8500"
+  service_registration {
+    enabled = true
+    service_name = "CTS Event AS3 WAF"
+    default_check {
+      enabled = true
+      address = "http://localhost:8558"
+   }
 }
+token = "xxxxx2e840207-4f76-e889-6124"
+}
+
 
 # Driver block
 driver "terraform-cloud" {

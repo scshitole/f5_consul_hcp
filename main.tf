@@ -71,6 +71,14 @@ resource "aws_security_group" "allow_ssh" {
     cidr_blocks = ["10.0.0.0/16"]
   }
 
+  ingress {
+    from_port   = 8558
+    to_port     = 8558
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+
   tags = {
     Name = "allow_ssh"
   }
